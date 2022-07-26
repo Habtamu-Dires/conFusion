@@ -23,8 +23,25 @@
     color: floralwhite;
 }
 
-.address {
+.row-address {
     font-size: 80%;
     margin: 0px;
     color: #0f0f0f;
+}
+
+.row-aboutus {
+    margin: 1px auto; 
+      
+}
+
+.row-history{
+    margin: 1px auto;
+    padding: 50px 0px 50px 0px;
+    
+}
+
+.row-leadership {
+    margin: 1px auto;
+    padding: 50px 0px 50px 0px;
+    
 }
