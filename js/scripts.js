@@ -1,8 +1,9 @@
 //jQuery code to play and pause the carousel -->
-   
+
 $(document).ready(function(){
     $("#mycarousel").carousel({ interval: 2000 });
     $('#carouselButton').click(function(){
+
         if($('#carouselButton').children('span').hasClass('fa-pause')){
             $('#mycarousel').carousel('pause');
             $('#carouselButton').children('span').removeClass('fa-pause');
@@ -11,11 +12,10 @@ $(document).ready(function(){
             $('#mycarousel').carousel('cycle');
             $('#carouselButton').children('span').removeClass('fa-play');
             $('#carouselButton').children('span').addClass('fa-pause');
-        }
-        
+        }  
     });
 });
-    
+
 //jQuery to control login modal-->
     
 $('#loginIcon').click(function(){
