@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     //this is mine
     const sass = require('sass');
    
-
+    
     grunt.initConfig({
         sass: {
             options: {
@@ -72,11 +72,10 @@ module.exports = function(grunt) {
         imagemin: {
             dynamic: {
                 files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: './',
-                    src:['img/*.{png,jpg,gif}'],
-                    dest: 'dist/'
+                    expand: true,                  // Enable dynamic expansion
+                    cwd: './',                   // Src matches are relative to this path
+                    src: ['img/*.{png,jpg,gif}'],   // Actual patterns to match
+                    dest: 'dist/'                  // Destination path prefix
                 }]
             }
         },
@@ -109,6 +108,7 @@ module.exports = function(grunt) {
             options: {
                 separator: ';'
             },
+             // dist configuration is provided by useminPrepare
             dist: {}
         },
         uglify: {
@@ -124,6 +124,8 @@ module.exports = function(grunt) {
                 length: 20
             },
             release: {
+                // filerev:release hashes(md5) all assets (images, js and css )
+                // in dist directory
                 files: [{
                     src: [
                         'dist/js/*.js',
@@ -132,6 +134,10 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        // Usemin
+        // Replaces all assets with their revved version in html and css files.
+        // options.assetDirs contains the directories for finding the assets
+        // according to their relative paths
         usemin: {
             html: ['dist/contactus.html','dist/aboutus.html','dist/index.html'],
             options: {
